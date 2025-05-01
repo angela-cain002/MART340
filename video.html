@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaos Creations: Video</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Chaos Creations: Biography</a>
+    <a href="video.html">Chaos Creations: Video</a>
+    <a href="gallery.html">Chaos Creations: Gallery</a>
+  </nav>
+
+  <main class="video-container" id="video-bg">
+    <video controls>
+      <source src="https://youtu.be/1uiVLVXVEwo" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </main>
+
+  <script>
+    const bg = document.getElementById('video-bg');
+    document.addEventListener('mousemove', (e) => {
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);
+      bg.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    });
+  </script>
+</body>
+</html>

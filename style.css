@@ -1,0 +1,121 @@
+/*This is an external stylesheet. I could theoretically place this code within each of my html files, but that makes the code basically unreadable. No one wants paragraphs of gobble-ty gook.*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+/*I wanted to create an easy, workable navigation bar, so people viewing the gallery had an easy time moving around.*/
+
+nav {
+  position: relative;
+  z-index: 2;
+  background-color: black;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.bio-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff69b4, #ff6347, #1e90ff, #32cd32);
+  animation: chaosBG 10s infinite linear;
+}
+
+.bio-text {
+  text-indent: 2em;
+  flex: 1;
+  padding: 2em;
+  
+}
+
+.bio-image {
+  flex: 1;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/*Surprise! You're on camera! I'm going to paste this video of me editing and adding comments to my code to my gallery, so you have a little "taste" of how I code.*/
+
+.video-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Adjust height based on nav size */
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.video-container video {
+  width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+/*Gallery! Surprise again! Angela chose a rainbow gradient for her background of the gallery. Is that chaotic? Probably not, but colors with the theme of "chaos" aren't always readable.*/
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(45deg, #ff69b4, #ff6347, #1e90ff, #32cd32);
+  animation: chaosBG 10s infinite linear;
+}
+
+.art-piece {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.art-piece img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Drop-down banner style */
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.art-piece:hover .description {
+  max-height: 200px;
+  padding: 1rem;
+}
